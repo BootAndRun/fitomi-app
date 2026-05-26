@@ -23,7 +23,7 @@ Fitomi ist eine Mobile App für Android, mit der du eigene Kochbücher und Rezep
 
 Fitomi erhebt keine personenbezogenen Daten. Es findet keine Registrierung, kein Login und keine Cloud-Synchronisation statt. Alle Daten verbleiben lokal auf deinem Gerät.
 
-👉 [Datenschutzerklärung](./privacy)
+👉 [Datenschutzerklärung](https://bootandrun.github.io/fitomi-app/privacy)
 
 ---
 
@@ -31,7 +31,7 @@ Fitomi erhebt keine personenbezogenen Daten. Es findet keine Registrierung, kein
 
 Du hast einen Fehler entdeckt oder eine Idee für ein neues Feature?
 
-Erstelle einfach ein [GitHub Issue](../../issues) – ich freue mich über jedes Feedback!
+Erstelle einfach ein [GitHub Issue](https://github.com/BootAndRun/fitomi-app/issues) – ich freue mich über jedes Feedback!
 
 Bitte nutze folgende Labels:
 - `bug` – für Fehler und unerwartetes Verhalten
@@ -41,6 +41,6 @@ Bitte nutze folgende Labels:
 
 ## Release Notes
 
-Alle Versionen und Änderungen findest du unter [Releases](../../releases).
+Alle Versionen und Änderungen findest du bald unter den Releases!
 
 ---
