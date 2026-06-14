@@ -96,7 +96,7 @@ Shopping list content (item names, quantities, checked status) and list membersh
 
 ### 4.5 Invitation Codes and Recipe Share Links
 
-When you generate an invite code for a cookbook or shopping list, a document containing the code, your user ID, and the associated resource ID is stored in Firestore. Codes are deleted automatically once redeemed or by the creator. Recipe share links are stored as publicly readable documents; list access is prevented to avoid code enumeration.
+When you generate an invite code for a cookbook or shopping list, a document containing the code, your user ID, and the associated resource ID is stored in Firestore. Codes are deleted automatically once redeemed. Recipe share links are stored as publicly readable documents; list access is prevented to avoid code enumeration.
 
 **Legal basis for all Firestore data:** Art. 6(1)(b) GDPR – processing is necessary for the performance of the contract (providing the App's core features such as cloud sync, collaboration, and cross-device access).
 
