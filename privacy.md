@@ -10,7 +10,7 @@ This Privacy Policy explains how your personal data is collected, used, and prot
 
 **Marius Hartmann**
 Osnabrück, Germany
-Contact: marius-hartmann98@web.de
+Contact: bootandrun@gmail.com
 
 By creating an account and using the App, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with this policy, please do not use the App.
 
