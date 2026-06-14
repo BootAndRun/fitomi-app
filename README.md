@@ -15,7 +15,7 @@ Fitomi ist eine Mobile App für Android, mit der du eigene Kochbücher und Rezep
 - **Portionsskalierung** – Nährwerte passen sich dynamisch an die gewählte Portionsanzahl an
 - **Bilder** – Für Kochbücher & Rezepte (Kamera, Galerie oder vorgefertigte Vorlagen)
 - **Globale Rezeptsuche** – Suche über alle Kochbücher hinweg
-- **Offline-First** – Alle Daten lokal auf dem Gerät (SQLite), keine Cloud, keine Registrierung
+- **Nährwert Tracking** - Tracke deine täglichen Kalorien, Proteine, Fette, und mehr
 
 ---
 
