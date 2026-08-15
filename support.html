@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fitomi Support</title>
+<meta name="description" content="Support and frequently asked questions about the fitomi app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #2D5016;
+    --primary-light: #4A7C2F;
+    --primary-container: #D4E8B8;
+    --background: #F5F0E8;
+    --surface: #FFFFFF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B6B6B;
+    --text-hint: #AAAAAA;
+    --divider: #E0D8C8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+  }
+
+  .wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--background);
+  }
+
+  header {
+    background: var(--primary);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+  }
+
+  .header-label {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--primary-container);
+  }
+
+  .hero {
+    padding: 40px 28px 24px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 26px;
+    margin: 0 0 8px;
+    letter-spacing: -0.4px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .section {
+    padding: 0 28px 8px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .contact-text {
+    flex: 1;
+    min-width: 160px;
+  }
+
+  .contact-text p {
+    margin: 0;
+  }
+
+  .contact-title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .contact-hint {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 2px !important;
+  }
+
+  .contact-button {
+    background: var(--primary);
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .contact-button:hover {
+    background: var(--primary-light);
+  }
+
+  .faq-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin: 24px 0 12px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .faq-icon {
+    font-size: 17px;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  .faq-answer {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 8px 0 0 27px;
+    line-height: 1.5;
+  }
+
+  footer {
+    padding: 20px 28px 32px;
+    border-top: 1px solid var(--divider);
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: var(--text-hint);
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 22px; }
+    .contact-card { flex-direction: column; align-items: flex-start; }
+    .contact-button { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="logo-badge">🌱</div>
+    <span class="logo-text">fitomi</span>
+    <span class="header-label">Support</span>
+  </header>
+
+  <div class="hero">
+    <h1>How can we help you?</h1>
+    <p>Answers to common questions about fitomi – your recipes, your nutrition diary, and your account.</p>
+  </div>
+
+  <div class="section">
+    <div class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-text">
+        <p class="contact-title">Get in touch</p>
+        <p class="contact-hint">We usually reply within a few days</p>
+      </div>
+      <a href="mailto:bootandrun@gmail.com" class="contact-button">bootandrun@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="faq-label">Frequently asked questions</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-question"><span class="faq-icon">💧</span>How do I enable water tracking?</p>
+        <p class="faq-answer">Open the menu and go to Settings. Under "Tracking" you can turn water tracking on or off and set your daily goal.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question"><span class="faq-icon">🎯</span>How do I change my goals in the diary?</p>
+        <p class="faq-answer">Tap the goal icon at the top of the diary. There you can customize your targets for calories, protein, fat, carbohydrates, sugar, fiber, and salt.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question"><span class="faq-icon">🌐</span>How do I switch the app language?</p>
+        <p class="faq-answer">Open Settings and select Language under "Appearance". German and English are currently available.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question"><span class="faq-icon">👥</span>My invite code for a cookbook isn't working</p>
+        <p class="faq-answer">Invite codes are only valid for a limited time. Ask the cookbook's owner for a new code using the share button.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question"><span class="faq-icon">🔄</span>My data isn't showing up on another device</p>
+        <p class="faq-answer">Make sure you're signed in with the same account on both devices and have an internet connection. Syncing happens automatically in the background.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question"><span class="faq-icon">🗑️</span>How do I delete my account and data?</p>
+        <p class="faq-answer">In the app, go to Profile &gt; Delete account. All cookbooks, recipes, shopping lists, and diary entries will be permanently removed.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question"><span class="faq-icon">👑</span>What's included in the fitomi Pro plan?</p>
+        <p class="faq-answer">Pro unlocks additional statistics and removes limits on cookbooks and recipes, among other things. See the app under Profile for details.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://bootandrun.github.io/fitomi-app/privacy">Privacy policy</a>
+      <!-- TODO: add imprint URL once available -->
+      <a href="#">Imprint</a>
+      <!-- TODO: add terms of service URL once available -->
+      <a href="#">Terms of service</a>
+    </div>
+    <p class="copyright">&copy; 2026 fitomi</p>
+  </footer>
+
+</div>
+</body>
+</html>
