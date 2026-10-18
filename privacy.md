@@ -1,294 +1,165 @@
-# Privacy Policy
+# Privacy Policy for the "Fitomi" App
 
-**Last updated: July 22, 2026**
+**Last updated: October 18, 2026**
 
----
+## 1. Controller
 
-## 1. Introduction
+The controller responsible for data processing in connection with the "Fitomi" app (Android and iOS) is:
 
-This Privacy Policy explains how your personal data is collected, used, and protected when you use the mobile application **Fitomi** ("the App"). The App is developed and provided by:
-
-**Marius Hartmann**
+Marius Hartmann
 Osnabrück, Germany
-Contact: bootandrun@gmail.com
+Email: bootandrun@gmail.com
 
-By creating an account and using the App, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with this policy, please do not use the App.
+This privacy policy explains which personal data is processed when you use the app, for what purpose, on what legal basis, and what rights you have.
 
----
+## 2. Overview
 
-## 2. Overview of Data We Process
+Fitomi is an app for cookbooks, recipes, nutrition tracking (food diary), meal planning and shopping lists.
 
-Fitomi is a recipe management, nutrition tracking, and meal planning application. You can use most of the App **entirely without an account** — in that case, all data stays on your device and nothing is transmitted to our servers except requests you actively trigger (e.g. a barcode lookup, see Section 7.3). If you choose to create an account, the App additionally offers cloud sync, cross-device access, and collaborative features (shared cookbooks and shopping lists), which requires processing some personal data on our servers.
+- **Without an account**, all data is stored exclusively locally on your device.
+- **With an account**, your content is additionally stored in the cloud (Google Firebase) and synchronized across your devices. You can also share cookbooks and shopping lists with other users and share recipes via a link.
 
-The following categories of data may be processed, depending on how you use the App:
+Fitomi uses **no** advertising, **no** analytics or tracking services and **no** crash reporting.
 
-- **Account data** – email address, password (handled by Firebase Authentication, never stored by us in plain text), username, display name, optional Google profile photo URL, and account settings
-- **Nutritional diary data** – meals, food items, portions, calorie and macronutrient entries, water intake, and dietary goals
-- **Recipes, cookbooks, and ingredients** – content you create or contribute to shared cookbooks
-- **Shopping lists** – items you add, including shared lists with other users
-- **Images** – photos of recipes or cookbooks, stored locally on your device only
-- **Device and network data** – IP address transmitted as part of standard network communication with our servers and third-party services described in Section 7
+## 3. Using the app without an account
 
----
+You can use the app without registering. In that case, recipes, cookbooks, diary entries, water intake, goals, meal planner, shopping lists and images are stored exclusively in a local database (SQLite) on your device. No data is transmitted to my servers or to cloud services, and there is no synchronization. If you uninstall the app, this data is lost.
 
-## 3. Using the App Without an Account
+Even without an account, the app uses the Open Food Facts interface when needed (see Section 8.3) and loads fonts from Google (see Section 8.4).
 
-You can use the core recipe, diary, and shopping-list features of Fitomi without registering. In this mode, all your data (recipes, diary entries, shopping lists, etc.) is stored **exclusively in a local database on your device** (SQLite). No personal data is transmitted to or stored on our servers. This data is not synced across devices and is lost if you uninstall the App.
+## 4. Account and sign-in
 
----
+You can create an account to use cloud features. Sign-in is handled through Firebase Authentication (Google LLC) and is possible in the following ways:
 
-## 4. Account Creation and Authentication
+- **Email and password:** We process your email address and password. The password is processed securely by Firebase Authentication; I have no access to your plain-text password. After registration, a confirmation email is sent. If you reset your password, an email may be sent to your address.
+- **Sign in with Google:** You sign in with your Google account. Google transmits your email address, your display name and, if applicable, the URL of your profile picture to Firebase. Google's privacy policy applies to Google's processing of your data.
+- **Sign in with Apple:** You sign in with "Sign in with Apple". Apple may transmit your name and email address (or, at your choice, an anonymized Apple relay address) to Firebase. Apple's privacy policy applies to Apple's processing of your data.
 
-If you choose to create an account, we support two methods:
+**Legal basis:** Art. 6(1)(b) GDPR (providing the account functions and cloud synchronization).
 
-### 4.1 Email and Password
+## 5. Cloud data (Google Firebase)
 
-You can register with an email address and a password. This is processed by **Firebase Authentication** (Google LLC):
-- Your password is transmitted securely to Firebase Authentication and stored there in hashed form. We never see or store your password ourselves.
-- After registration, a verification email is sent to your address. Certain features require a verified email address.
-- You can request a password-reset email at any time.
-- Your email address is stored in your user profile in our Firestore database (see Section 5).
+When you are signed in, the following data is stored in Firebase Firestore and Firebase Storage:
 
-**Legal basis:** Art. 6(1)(b) GDPR – processing is necessary for the performance of the contract (providing you with access to the App).
+### 5.1 User profile
 
-### 4.2 Google Sign-In
+When you first sign in, a profile is created containing: user ID (UID), email address, username, display name, profile picture URL (if provided by Google/Apple), plan (Free/Pro, with expiry date if applicable), and creation and modification timestamps. Your initial username is automatically derived from the part of your email address before the "@"; you can change it at any time in your profile. The plan can only be changed on the server side.
 
-Alternatively, you can sign in using your existing Google account. In this case:
-- You authenticate directly with Google. Google's own privacy policy applies to this process: https://policies.google.com/privacy
-- Upon successful sign-in, we receive your email address, display name, and (if available) your Google profile photo URL
-- These are stored in your user profile in our Firestore database
+### 5.2 Cookbooks, recipes and ingredients
 
-**Legal basis:** Art. 6(1)(b) GDPR – processing is necessary for the performance of the contract.
+Titles, descriptions, preparation steps, tags, categories, servings, preparation time, difficulty, ratings, ingredients (including quantities, barcodes and nutritional values), as well as the creator's ID and the IDs of the cookbook's members. All members of a shared cookbook can read and edit its content.
 
----
+### 5.3 Cookbook and recipe images
 
-## 5. Data Stored in Our Cloud Database (Firebase Firestore)
+Images you select for cookbooks or recipes are compressed on your device (JPEG, max. 1024 px, under 500 KB) and stored in **Firebase Storage**, so they are visible on your other devices and to members of shared cookbooks. Access is limited to members of the respective cookbook. Images that remain only on your device and the preset images bundled with the app are not uploaded. Without an account, no images are uploaded.
 
-Fitomi uses **Google Firebase Cloud Firestore** as its cloud database. The following data is stored there and associated with your account once you register:
+### 5.4 Food diary, water intake and goals
 
-### 5.1 User Profile
+Diary entries (date, meal, foods or recipes with quantities and nutritional values), water intake (if water tracking is enabled) and your nutrition goals. This data can only be accessed by your own account.
 
-When you register, a user profile document is created containing:
-- Unique user ID (UID) assigned by Firebase Authentication
-- Email address
-- Username and display name (editable by you)
-- Google profile photo URL, if you signed in with Google
-- Profile visibility setting (public/private toggle, relevant for a planned future community feature)
-- Account plan (Free or Pro) and plan expiry date – set server-side only, cannot be modified by the App
-- Account creation date and last update timestamp
+> **Note:** This information may allow conclusions about your diet and possibly your health (health data within the meaning of Art. 9 GDPR). Entering it is voluntary. It is processed on the basis of your explicit consent (Art. 9(2)(a) in conjunction with Art. 6(1)(a) GDPR), which you give by voluntarily using these functions and signing in with cloud synchronization. You can withdraw your consent at any time with effect for the future by deleting the data or your account.
 
-### 5.2 Recipes, Cookbooks, and Ingredients
+### 5.5 Shopping lists
 
-Any recipes, cookbooks, and ingredients you create in your account are stored in Firestore. This includes:
-- Titles, descriptions, tags, nutritional values, step-by-step instructions, and ingredient lists
-- The user ID of the creator and the list of cookbook member IDs
-- Timestamps for creation and updates
+List titles, items (name, quantity, unit, checked status, recipe name where applicable), owner and members of the list. All members of a shared list can read and edit it.
 
-When you share a cookbook via invite code, all members of that cookbook can read and edit its content. When you share an individual recipe via a public share link, the recipe's content — including title, description, ingredients, and your display name as "shared by" — is publicly readable by anyone who has the link, without requiring an account. Recipe shares are not searchable or listable, only accessible via the specific link.
+### 5.6 Sharing with other users
 
-### 5.3 Food Diary and Nutritional Tracking
+- **Invitation codes for cookbooks and shopping lists:** When you share, a code is generated that is valid for one hour. The code, title, owner ID and expiry time are stored. Anyone who redeems the code becomes a member. Members can see the content as well as each other's usernames. The owner can remove members; members can leave a cookbook or list.
+- **Recipe share links:** When you share a recipe via a link, a copy of the recipe (title, description, category, tags, servings, time, difficulty, instructions, ingredients with nutritional values) is stored in the cloud together with the creator's name and creator ID. The link is valid for 48 hours; **anyone who knows the link can access the recipe during this period**. Therefore only share the link with people you want to show the recipe to. You can delete a share yourself at any time.
 
-The diary feature allows you to track your daily food intake and water consumption. The following data is stored per user:
-- Diary entries per date, including meal categories (e.g., breakfast, lunch, dinner, snacks)
-- Individual food items per meal with name, quantity, and nutritional values (calories, protein, fat, carbohydrates, and other nutrients)
-- Daily water intake entries (unless you disable water tracking in Settings, in which case no new entries are created)
-- Dietary goals you have set (e.g., target calories, protein, fat, carbohydrates)
+**Legal basis:** Art. 6(1)(b) GDPR (providing the functions you choose); for health data additionally Art. 9(2)(a) GDPR (see above).
 
-This data is **strictly private**: it is only accessible to you. No other user, including other cookbook members, can see your diary or goals.
+## 6. Data on your device
 
-> **Note on health data:** Nutritional tracking data (food intake, calorie and macronutrient records) may constitute data relating to your health under Art. 9 GDPR. We process this data exclusively on the basis of your explicit and voluntary use of the diary feature as a core service you signed up for. The legal basis is Art. 6(1)(b) GDPR in conjunction with Art. 9(2)(a) GDPR (your explicit consent, expressed through active and voluntary use of the feature). You may delete all diary data at any time by deleting individual entries or by requesting account deletion (Section 12).
+- **Local database (SQLite):** All content is also stored locally so the app works offline and loads quickly. This includes the **meal planner**, which is stored only locally and is not synchronized to the cloud. The app also contains a built-in list of common meals with nutritional values (no personal data) as well as meals you have created yourself.
+- **Settings (SharedPreferences):** Theme (light/dark), language, water tracking on/off, onboarding status, timestamps for notices (e.g. guest notice, in-app review) and a cached history of product searches (up to 7 days).
+- **Images:** Images you select and cookbook/recipe images downloaded from the cloud are stored in the app's storage on your device.
+- **Camera and photos:** The app only requests access to the camera (for scanning barcodes) and to your photos (for selecting images for recipes and cookbooks) when you use the respective function. You can revoke these permissions at any time in your system settings. The camera image of a barcode scan is analyzed on the device only; only the recognized barcode number is transmitted (see 8.3).
+- **Keep screen awake:** In cooking mode, the app prevents the screen from turning off. No data is collected in the process.
 
-### 5.4 Shopping Lists
+## 7. No analytics, no advertising
 
-Shopping list content (item names, quantities, checked status) and list membership are stored in Firestore. When a shopping list is shared via invite code, all members can read and edit it. Membership management follows the same access control model as shared cookbooks.
+The app contains no analytics or tracking tools (e.g. Firebase Analytics, Crashlytics), no advertising networks and no push notifications. No profiling for advertising purposes takes place.
 
-### 5.5 Invitation Codes and Recipe Share Links
+## 8. Services used and recipients
 
-When you generate an invite code for a cookbook or shopping list, a document containing the code, your user ID, and the associated resource ID is stored in Firestore. Codes are deleted once redeemed or when revoked by their creator. Recipe share links remain stored as publicly readable documents until you delete them or delete your account.
+### 8.1 Google Firebase (Google LLC / Google Ireland Ltd.)
 
-**Legal basis for all Firestore data:** Art. 6(1)(b) GDPR – processing is necessary for the performance of the contract (providing the App's core features such as cloud sync, collaboration, and cross-device access).
+Used for authentication (Firebase Authentication), database (Cloud Firestore) and image storage (Firebase Storage). A data processing agreement under Art. 28 GDPR is in place with Google. Data may be transferred to the USA; the transfer is based on EU Standard Contractual Clauses or the EU-US Data Privacy Framework adequacy decision, where Google is certified. Data in transit is encrypted using TLS.
 
----
+### 8.2 Google Sign-In and Sign in with Apple
 
-## 6. Data Stored Locally on Your Device
+When you use these sign-in methods, the respective provider (Google or Apple) processes your data as an independent controller under its own privacy policy.
 
-### 6.1 Images (Photos)
+### 8.3 Open Food Facts
 
-If you add photos to your recipes or cookbooks, images are stored **exclusively on your device** in the App's local document directory. Images are **never uploaded to any server** and are not accessible to us, regardless of whether you use the App with or without an account. You can delete images by removing them within the App or by uninstalling the App.
+For barcode scanning and product search, the app queries the public interface of Open Food Facts (Open Food Facts Association, France; servers in the EU). The scanned barcode or your search term, your IP address and the app identifier (user agent) are transmitted. These requests are made only when you actively scan or search. No account data is transmitted.
 
-### 6.2 App Settings
+**Legal basis:** Art. 6(1)(b) GDPR (providing the function you chose), alternatively Art. 6(1)(f) GDPR.
 
-Preferences such as your dark/light mode choice, language, and water-tracking settings are saved in your device's local app storage (SharedPreferences). This data never leaves your device.
+### 8.4 Google Fonts
 
-### 6.3 Local Recipe, Diary, and Shopping List Data
+The app loads its fonts (Poppins, Playfair Display) from Google Fonts when needed. Your IP address is transmitted to Google in the process. This serves a consistent appearance of the app (legitimate interest, Art. 6(1)(f) GDPR). You can object to this (see Section 12).
 
-The App uses a local database (SQLite via Drift) to store your recipes, diary entries, and shopping lists on-device for offline access and fast loading. If you are signed in, this data is also synced to Firestore as described in Section 5. If you use the App without an account, this local database is the only place your data is stored.
+### 8.5 In-app review (Google Play / Apple App Store)
 
-### 6.4 Common Meals Database
+After a few days of use, the app may ask you for a rating (at most twice, at least 90 days apart). The timing is determined solely locally on your device using counters (e.g. days since installation, number of recipes). The review itself is handled via the dialog of Google Play (Android) or Apple (iOS); the developer receives no personal data in the process.
 
-The App includes a built-in local database of common pre-defined food items (e.g., generic meals like "döner kebab") that can be added to your diary for quick nutritional logging. This database is bundled with the App and contains no personal data.
+### 8.6 App stores
 
----
+When you download the app, Google Play or the Apple App Store collect their own data (e.g. account, time, device identifier). The platform operators are solely responsible for this.
 
-## 7. Third-Party Services
+## 9. Retention and deletion
 
-### 7.1 Firebase (Google LLC)
+- **Cloud data** (profile, cookbooks, recipes, ingredients, images, shopping lists, diary, water, goals) is stored until you delete it or delete your account.
+- **Invitation codes** are valid for one hour; **recipe share links** for 48 hours. Expired entries can no longer be accessed. You can delete your own shares and invitations; at the latest, they are removed when you delete your account.
+- **Local data** remains on your device until you delete it, sign out, delete your account or uninstall the app.
+- **Account deletion in the app:** You can delete your account directly in the app under your profile. This deletes your diary, water and goal data, your user profile, your share links and invitations, and the associated images in the cloud, and finally your sign-in account in Firebase Authentication. Your local data on the device is subsequently removed as well. For cookbooks and shopping lists, the following applies: if other members remain, ownership is transferred to the member who has been part of it the longest, and the content remains available to those members; if there are no other members, the cookbook or list is deleted together with its recipes, ingredients and images. For cookbooks and lists where you are only a member, you leave them. If deletion requires a recent sign-in, please confirm by signing in again; deletion will then continue.
+- Alternatively, you can request deletion by email at bootandrun@gmail.com.
 
-Fitomi uses the following Firebase services provided by **Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA**:
+There are no statutory retention obligations for the content stored in the app. For technical reasons, backups at Google may continue to exist for a limited period.
 
-- **Firebase Authentication** – user login and session management (only if you create an account)
-- **Cloud Firestore** – cloud database for all user-generated content described in Section 5 (only if you create an account)
+## 10. Data security
 
-Google processes data on our behalf as a data processor under a Data Processing Agreement (Art. 28 GDPR). Data is transferred to the United States under the EU Standard Contractual Clauses (SCCs) adopted by the European Commission.
+Transmission between the app and the cloud is encrypted (TLS). Access rules in Firestore and Storage limit access to your own data and to content in which you participate as a member or which you have explicitly shared. Local data is protected by your device's security mechanisms (e.g. lock screen, device encryption).
 
-Google's privacy policy: https://policies.google.com/privacy
-Firebase data processing information: https://firebase.google.com/support/privacy
+## 11. Children
 
-We do **not** use Firebase Analytics, Firebase Crashlytics, Firebase Cloud Messaging, or Firebase Storage.
+The app is not intended for children under 16. If you are younger, please use the app only with the consent of your parents or legal guardians. I am not aware of knowingly processing data of children under 16. If you become aware of such a case, please contact me at the email address above.
 
-### 7.2 Google Sign-In (Google LLC)
+## 12. Your rights
 
-If you choose to sign in with Google, Google LLC processes your authentication data. This service is subject to Google's own privacy policy (linked above). The data transfer to the US is covered by Standard Contractual Clauses.
+Within the scope of the law, you have the following rights:
 
-### 7.3 Open Food Facts API
+- **Access** to the data stored about you (Art. 15 GDPR)
+- **Rectification** of inaccurate data (Art. 16 GDPR); you can change your username and display name directly in your profile
+- **Erasure** (Art. 17 GDPR), including directly in the app (see Section 9)
+- **Restriction of processing** (Art. 18 GDPR)
+- **Data portability** (Art. 20 GDPR)
+- **Objection** to processing based on legitimate interests (Art. 21 GDPR), e.g. to the loading of Google Fonts
+- **Withdrawal of consent** with effect for the future (Art. 7(3) GDPR)
 
-The App integrates the **Open Food Facts API** (https://world.openfoodfacts.org), operated by the Open Food Facts / Open Food Facts Association (non-profit, France), to retrieve nutritional information and product images when you scan a product barcode or search for a food item.
+To exercise your rights, an email to bootandrun@gmail.com is sufficient. I will usually respond within one month.
 
-- This API is contacted **only when you actively trigger a barcode scan or food search** — never in the background or at startup, and regardless of whether you are signed in
-- The request technically includes your **IP address** as part of standard network communication
-- Product images returned by the API may be displayed and temporarily cached on your device
-- No other personal data is transmitted by the App to this service
+You also have the right to lodge a complaint with a data protection supervisory authority, e.g. the State Commissioner for Data Protection of Lower Saxony (Landesbeauftragte für den Datenschutz Niedersachsen) or the supervisory authority of your place of residence.
 
-Open Food Facts privacy policy: https://world.openfoodfacts.org/privacy
+## 13. Overview of legal bases
 
-**Legal basis:** Art. 6(1)(b) GDPR / legitimate interest (Art. 6(1)(f) GDPR when used without an account) – necessary to provide the requested product lookup feature.
-
-### 7.4 Google Fonts
-
-The App uses the `google_fonts` library, which may load font files from Google's font servers (https://fonts.google.com) at runtime. This causes your device's **IP address** to be transmitted to Google LLC servers. Font files are cached locally after the first load.
-
-**Legal basis:** Art. 6(1)(f) GDPR – legitimate interest in providing a consistent and visually accessible user interface. You may contact us if you wish to object to this processing.
-
-### 7.5 In-App Review (Google Play, Android only)
-
-On Android devices, the App uses the **Google Play In-App Review API** to occasionally prompt you to rate the App, based on local usage signals (e.g. days since install, number of recipes created) stored only in your device's local app storage. This prompt is shown at most twice per installation. Any review you choose to submit is processed directly by Google LLC and governed by Google's privacy policy. We do not receive any personal data through this mechanism.
-
-### 7.6 App Stores (Google Play / Apple App Store)
-
-When you download or use the App, **Google LLC** (Google Play Store) and/or **Apple Inc.** (Apple App Store) may independently collect data such as download statistics, crash reports, and device diagnostics under their own privacy policies. We have no access to personally identifiable information collected by these platforms.
-
-- Google Play: https://policies.google.com/privacy
-- Apple App Store: https://www.apple.com/legal/privacy
-
----
-
-## 8. No Analytics, No Crash Reporting, No Advertising
-
-Fitomi does **not** use any analytics SDKs, crash reporting services, or tracking tools. The developer does not collect usage data, behavioral data, or diagnostic data through the App. The App contains no advertisements and no advertising SDKs. No data is shared with advertising networks.
-
----
-
-## 9. Legal Bases for Data Processing (GDPR Summary)
-
-| Processing Activity | Legal Basis |
+| Processing | Legal basis |
 |---|---|
-| Local-only use without an account | No personal data processed by us |
-| Account creation & authentication | Art. 6(1)(b) – contract performance |
-| Cloud sync of recipes, cookbooks, diary | Art. 6(1)(b) – contract performance |
-| Nutritional diary and health-related data | Art. 6(1)(b) + Art. 9(2)(a) – explicit consent via voluntary use |
-| Collaborative features (shared cookbooks, lists) | Art. 6(1)(b) – contract performance |
-| Public recipe share links | Art. 6(1)(b) – contract performance (you actively choose to create a public link) |
-| Open Food Facts API (IP address) | Art. 6(1)(b) / Art. 6(1)(f) – requested feature / legitimate interest |
-| Google Fonts (IP address) | Art. 6(1)(f) – legitimate interest |
-| In-App Review prompt (Android) | Art. 6(1)(f) – legitimate interest |
+| Account, sign-in, cloud synchronization, sharing | Art. 6(1)(b) GDPR |
+| Food diary, water, goals (health data) | Art. 9(2)(a) in conjunction with Art. 6(1)(a) GDPR |
+| Barcode scan and product search (Open Food Facts) | Art. 6(1)(b), alternatively (f) GDPR |
+| Google Fonts | Art. 6(1)(f) GDPR |
+| In-app review (local counters) | Art. 6(1)(f) GDPR |
 
----
+## 14. Changes to this policy
 
-## 10. International Data Transfers
+I will update this privacy policy when the app or the legal situation changes. The current version is available at this address; the date above shows its effective date. In the case of material changes, I will notify you in an appropriate way (e.g. in the app).
 
-Your data is processed by Firebase (Google LLC) on servers that may be located outside the European Economic Area (EEA), including in the United States. These transfers are safeguarded by the **EU Standard Contractual Clauses (SCCs)** approved by the European Commission under Art. 46(2)(c) GDPR.
+## 15. Contact
 
-Similarly, the use of Google Sign-In and Google Fonts may involve data transfers to the US, covered by the same legal mechanism.
-
-The Open Food Facts API is operated by a non-profit organization in France; data is processed within the EU/EEA.
-
----
-
-## 11. Data Retention
-
-| Data | Retention Period |
-|---|---|
-| User profile (Firestore) | Until account deletion is requested |
-| Diary entries, goals, water tracking | Until account deletion is requested, or until you delete individual entries |
-| Recipes, cookbooks, ingredients | Until deleted by you or until account deletion |
-| Shopping lists | Until deleted by you or until account deletion |
-| Invite codes | Deleted upon redemption or when revoked by the creator |
-| Recipe share links | Until deleted by you or account deletion |
-| Locally stored data (offline account, no login) | Until removed by you or the App is uninstalled |
-| Locally stored images | Until removed by you or the App is uninstalled |
-| App settings (SharedPreferences) | Until the App is uninstalled |
-
-When you request account deletion, all data associated with your account in Firestore will be permanently deleted. Data you have contributed to shared cookbooks or shopping lists may persist for other members but will be disassociated from your identity where technically possible.
-
----
-
-## 12. Account and Data Deletion
-
-You can delete individual recipes, cookbooks, shopping lists, diary entries, and images directly within the App at any time.
-
-**Full account deletion is currently only available on request:** please contact us at **bootandrum@gmail.com** from the email address associated with your account. We will delete your account and all associated Firestore data within one month of your request, in accordance with Art. 12(3) GDPR. An in-app self-service deletion option is planned for a future update.
-
----
-
-## 13. Your Rights Under the GDPR
-
-As a resident of the European Union, you have the following rights regarding your personal data:
-
-- **Right of access (Art. 15 GDPR):** You may request information about the personal data we process about you.
-- **Right to rectification (Art. 16 GDPR):** You may correct inaccurate data directly in the App (e.g., username, display name) or by contacting us.
-- **Right to erasure (Art. 17 GDPR):** You may request deletion of your account and all associated data by contacting us (see Section 12).
-- **Right to restriction of processing (Art. 18 GDPR):** Under certain conditions, you may request that we restrict the processing of your data.
-- **Right to data portability (Art. 20 GDPR):** You may request a copy of your personal data in a structured, commonly used, and machine-readable format by contacting us.
-- **Right to object (Art. 21 GDPR):** Where processing is based on legitimate interests (Art. 6(1)(f) GDPR), you have the right to object. This applies in particular to the Google Fonts processing described in Section 7.4.
-- **Right to withdraw consent (Art. 7(3) GDPR):** Where processing is based on your consent (e.g., use of the diary feature), you may withdraw consent at any time by deleting the relevant data or your account. Withdrawal does not affect the lawfulness of processing before withdrawal.
-
-To exercise any of these rights, please contact: **bootandrum@gmail.com**
-
-We will respond to your request within one month as required by Art. 12(3) GDPR.
-
-You also have the right to lodge a complaint with a supervisory authority. The competent authority for residents of Germany is:
-
-**Die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)**
-https://www.bfdi.bund.de
-
----
-
-## 14. Data Security
-
-All data stored in Firestore is protected by Firebase security rules that strictly enforce that users can only access their own data or data they have been explicitly granted access to (e.g., shared cookbook members). Communication between the App and Firebase is encrypted in transit using TLS. Locally stored data (images, settings, offline recipes and diary entries) is protected by your device's built-in security mechanisms (e.g., device encryption, passcode/biometric protection). We do not have access to your device or its locally stored data.
-
----
-
-## 15. Children's Privacy
-
-Fitomi is not directed at children under the age of 16 (or the minimum digital consent age applicable in your EU member state). We do not knowingly collect personal data from children. If you believe a child has created an account or provided personal data through the App, please contact us at bootandrum@gmail.com so we can take appropriate action.
-
----
-
-## 16. Changes to This Privacy Policy
-
-We reserve the right to update this Privacy Policy as the App evolves. Any material changes will be communicated by updating the "Last updated" date at the top of this document. For significant changes, we will provide an in-app notice. Continued use of the App after such changes constitutes your acknowledgment of the updated policy.
-
----
-
-## 17. Contact
-
-If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact:
-
-**Marius Hartmann**
+Marius Hartmann
 Osnabrück, Germany
-Email: bootandrum@gmail.com
-
----
-
-*This Privacy Policy was prepared in accordance with the requirements of the EU General Data Protection Regulation (GDPR), the German Federal Data Protection Act (BDSG), and the developer guidelines of Google Play and the Apple App Store.*
+Email: bootandrun@gmail.com
