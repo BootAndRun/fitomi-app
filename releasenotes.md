@@ -1,6 +1,15 @@
 # 🥗 Fitomi Release Notes
 
+**v1.4.3**
 
+2026-10-20
+
+- iOS Widgets: Your shopping list right on your iPhone home screen – including quick adding of items
+- A recipe's nutrition facts are now shown directly on each recipe tile in a cookbook
+- Manual item search in recipes and in the diary has been significantly improved
+- Improved Shopping List: A new button in the shopping list lets you quickly add multiple items one after another
+
+---
 
 **v1.4.2**
 
