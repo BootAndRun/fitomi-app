@@ -1,9 +1,10 @@
 # 🥗 Fitomi Release Notes
 
----
 
-## v1.4.2
-# 2026-10-19
+
+**v1.4.2**
+
+2026-10-19
 
 - Cookbook and recipe images are now stored in the cloud
 - Images sync across multiple devices and in shared cookbooks and lists
@@ -12,8 +13,9 @@
 
 ---
 
-## v1.4.1
-# 2026-10-05
+**v1.4.1**
+
+2026-10-05
 
 - New: Meal Planner - plan your entire week ahead
 - Diary: portions can now be logged in steps of 0.25
@@ -24,8 +26,9 @@
 
 ---
 
-## v1.4.0
-# 2026-09-28
+**v1.4.0**
+
+2026-09-28
 
 - Shopping list revamped: items are now automatically sorted by category in a sensible order (e.g., fruits and vegetables first)
 - Added new categories to the diary
